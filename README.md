@@ -71,8 +71,6 @@ The main components are as follows:
 | Dockerfile |   Docker file for the Container Image        |       
 | requirements.txt |   Has the dependencies required for the Container Image        |        
 |  app.py | Has the code for running the Flask app |    
-|  flaskr / kvutils.py | Has the code for reading the secrets from the **KeyVault** by the Container App   |          
-|  flaskr / predictions.py | Has the code for getting the **predictions** for the Cassava Leaf by the Container App   |      
 |  flaskr / __init__.py | Has the code for initialization for the **Flask** App |      
 |  flaskr / templates / reco.py | Code for calling the Recommender Service       |        
 |  flaskr / static folder | Folder containing the CSS file   |           
