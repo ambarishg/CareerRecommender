@@ -1,0 +1,5 @@
+fastapi 
+pandas
+azure-servicebus
+uvicorn[standard]
+pyodbc

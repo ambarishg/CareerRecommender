@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recoservicebusdeploy
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recoservicebusweb
+  template:
+    metadata:
+      labels:
+        app: recoservicebusweb
+    spec:
+      containers:
+        - name: recoimage
+          image: recoacr.azurecr.io/reco-servicebus:v2 
+          ports:
+            - containerPort: 8000
+          env:
+            - name: CONN_STR
+              valueFrom:
+                secretKeyRef:
+                  key: connstr
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: TOPIC_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: topic_name
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: SUBSCRIPTION_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: subscription_name
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: SERVER
+              valueFrom:
+                secretKeyRef:
+                  key: server
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: DATABASE
+              valueFrom:
+                secretKeyRef:
+                  key: database
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: kubernetes-fastapi-recoservicebus-url
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: kubernetes-fastapi-recoservicebus-url
+          volumeMounts:
+            - name: azure
+              mountPath: /mnt/azure
+      volumes:
+        - name: azure
+          persistentVolumeClaim:
+            claimName: azurefile
+            
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reco-servicebus
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8000
+  selector:
+    app: recoservicebusweb

@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubernetes-fastapi-reco-url
+  namespace: default
+type: Opaque
+stringData:
+  kubernetes_reco_url: "http://20.219.230.250:8000/recotfidf/"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recodeploy-flaskui
+  labels:
+    app: recoflaskui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recoflaskui
+  template:
+    metadata:
+      labels:
+        app: recoflaskui
+    spec:
+      containers:
+        - name: reco-flaskui
+          image: recoacr.azurecr.io/recoui:v1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: KUBERNETES_RECO_URL
+              valueFrom:
+                secretKeyRef:
+                  key: kubernetes_reco_url
+                  name: kubernetes-fastapi-reco-url
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reco-service-flaskui
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+  selector:
+    app: recoflaskui
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: reco-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: reco-service-flaskui
+            port: 
+              number: 5000

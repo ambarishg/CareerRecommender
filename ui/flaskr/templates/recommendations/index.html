@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <form method="post">
+    <div class="mb-3">
+      <label for="question" class="form-label">Question:</label>
+      <textarea
+      class="form-control" 
+      rows="3" 
+      id = "question"
+      name = "question"
+      value="{{ request.form['question'] }}">
+      </textarea>
+    </div>
+     
+    <br/>
+    <br/>
+    <button type="submit" class="btn btn-primary mb-3">Recommendations</button>
+  
+</div>
+
+</form>
+
+<div class="container">
+{% if  recos %}
+
+<br/>
+
+<div class="mb-3">
+ {{question_new}}
+</div>
+
+<br/>
+
+<table class="table" width="100%">
+  <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Answer</th>
+      <th scope="col">Similarity</th>
+    </tr>
+  </thead>
+
+{% for reco in allitems %}
+     <tbody>
+      <tr>
+        <td>{{ reco[1] }} </td> 
+        <td>{{ reco[2] }} </td> 
+        <td>{{ reco[3] }} </td> 
+      </tr>
+     </tbody>     
+{% endfor %}
+</table>
+
+{% endif %}
+
+
+</div>
+
+{% endblock %}

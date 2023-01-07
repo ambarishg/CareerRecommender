@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recodeploy
+  labels:
+    app: recoweb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recoweb
+  template:
+    metadata:
+      labels:
+        app: recoweb
+    spec:
+      containers:
+        - name: recoimage
+          image: recoacr.azurecr.io/reco:v5
+          ports:
+            - containerPort: 8000
+          env:
+            - name: CONN_STR
+              valueFrom:
+                secretKeyRef:
+                  key: connstr
+                  name: kubernetes-fastapi-recoservice-url
+            - name: TOPIC_NAME
+              valueFrom:
+                secretKeyRef:
+                  key: topic_name
+                  name: kubernetes-fastapi-recoservice-url
+          volumeMounts:
+            - name: azure
+              mountPath: /mnt/azure
+      volumes:
+        - name: azure
+          persistentVolumeClaim:
+            claimName: azurefile
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reco-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8000
+  selector:
+    app: recoweb
