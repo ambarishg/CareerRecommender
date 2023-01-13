@@ -24,7 +24,20 @@ The main components are as follows:
 1. Create the Models in Azure ML
 2. Deploy the Recommendation Microservice. The deployment steps are in `api\deployment_steps.md`           
 3. Deploy the Professionals Microservice. The deployment steps are in `servicebusapi\deployment_steps.md`           
-4. Deploy the UI Microservice. The deployment steps are in `ui\deployment_steps.md`           
+4. Deploy the UI Microservice. The deployment steps are in `ui\deployment_steps.md`       
+
+<hr/>
+
+**Recommender Models**            
+
+<hr />             
+
+|  FileName  |  Description |
+|---|---|
+| recodata folder   |   Contains the files Questions / Professionals / Answers         |       
+| AzureML_recommender-tfidf.ipynb  |     Azure ML model creation in Jupyter Notebook        |        
+
+
 
 <hr/>
 
