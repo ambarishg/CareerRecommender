@@ -28,7 +28,7 @@ The main components are as follows:
 
 <hr/>
 
-**UI Service / Front End Service **            
+**UI Service / Front End Service**            
 
 <hr />             
 
