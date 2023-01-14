@@ -30,7 +30,9 @@ The main components are as follows:
 
 **Recommender Models**            
 
-<hr />             
+<hr />           
+
+Located in  `RecommenderModels folder`       
 
 |  FileName  |  Description |
 |---|---|
@@ -43,7 +45,9 @@ The main components are as follows:
 
 **Recommenders Service**            
 
-<hr />             
+<hr />               
+
+Located in  `api folder`       
 
 |  FileName  |  Description |
 |---|---|
@@ -62,6 +66,8 @@ The main components are as follows:
 
 <hr />             
 
+Located in  `servicebusapi folder`       
+
 |  FileName  |  Description |
 |---|---|
 | Dockerfile |   Docker file for the Container Image        |       
@@ -78,6 +84,7 @@ The main components are as follows:
 
 <hr />             
 
+Located in  `ui folder`       
 
 |  FileName  |  Description |
 |---|---|
