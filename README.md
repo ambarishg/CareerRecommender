@@ -32,8 +32,7 @@ The main components are as follows:
 
 <hr />             
 
-Located in  `ui folder`       
-The Front-End Kubernetes Service has the UI and calls the Recommender Service      
+Located in  `ui folder`.The Front-End Kubernetes Service has the UI and calls the Recommender Service     
 
 
 |  FileName  |  Description |
