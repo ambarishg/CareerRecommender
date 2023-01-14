@@ -125,7 +125,7 @@ Located in  `servicebusapi folder`
 
 <hr/>
 
-**Recommenders Service**            
+**Images for the Azure Kubernetes Cluster**            
 
 <hr />               
 
@@ -140,3 +140,26 @@ Located in  `images/aks folder`
 |  ServiceAndIngress.png | Service and Ingress of the AKS Cluster                   |          
 |  VirtualNetwork.png | Virtual Network of the AKS Cluster      |      
 |  VMSS.png | Virtual Machine ScaleSet of the AKS Cluster         |                 
+
+
+<hr/>
+
+**Images for AzureML**          
+
+<hr />               
+
+Located in  `images/azureml folder`         
+
+|  FileName  |  Description |
+|---|---|
+| AzureMLWorkSpace.png |   Azure ML Workspace                   |       
+| ComputeCluster.png|   Compute Cluster for Azure ML        |        
+|  DataStores-BlobStore.png | Blob Store where the Files are being stored     |    
+| DataStores.png |   All Datastores of AzureML             |        
+|  Experiment.png | Experiments of AzureML                   |          
+|  ExperimentFinished.png | Finished State of the Experiment in Azure ML      |      
+|  ExperimentQueued.png | Queued State of the Experiment in Azure ML         |         
+|  ExperimentRunning.png | Running State of the Experiment in Azure ML         |       
+|  Models.png | Models being registered in the Azure ML workspace         |       
+|  StorageAccount.png | Storage Account in the Azure ML workspace            |       
+
