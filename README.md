@@ -123,3 +123,20 @@ Located in  `servicebusapi folder`
 |  readbus.py | Has the code for Professionals Microservice       |     
 |  sqlqueries.sql | Script for creating the tables in **Azure SQL**        |     
 
+<hr/>
+
+**Recommenders Service**            
+
+<hr />               
+
+Located in  `images/aks folder`         
+
+|  FileName  |  Description |
+|---|---|
+| Kubernetes.png |   LoadBalancer                 |       
+| KubernetesFrontEndIPConfiguration.png |   Kubernetes  Service and Ingress configuration        |        
+|  NetworkSecurityGroup.png | Network Security Group of the AKS Cluster     |    
+| RouteTable.png |   Route Table of the AKS Cluster             |        
+|  ServiceAndIngress.png | Service and Ingress of the AKS Cluster                   |          
+|  VirtualNetwork.png | Virtual Network of the AKS Cluster      |      
+|  VMSS.png | Virtual Machine ScaleSet of the AKS Cluster         |                 
