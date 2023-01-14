@@ -21,7 +21,7 @@ The main components are as follows:
 
 <hr />
 
-1. Create the Models in Azure ML
+1. Create the Models in Azure ML. Run the `AzureML_recommender-tfidf` Jupyter Notebook in the RecommenderModels folder    
 2. Deploy the Recommendation Microservice. The deployment steps are in `api\deployment_steps.md`           
 3. Deploy the Professionals Microservice. The deployment steps are in `servicebusapi\deployment_steps.md`           
 4. Deploy the UI Microservice. The deployment steps are in `ui\deployment_steps.md`         
@@ -97,7 +97,9 @@ Located in  `api folder`
 | pv.yaml |   Yaml for the  **Persistent Volume and the Persistent Volume Claim**        |        
 |  secrets.yaml | Yaml for the secrets for the **Service Bus** used by the API   |          
 |  reco-pv.yaml | Yaml for the **Deployments** and the **Services** for the `Recommendation Service`   |      
-|  sim_tfidf.py | Has the code for Recommendation microservice      |                 
+|  sim_tfidf.py | Has the code for Recommendation microservice      |             
+| .github\workflows\recoui-workflow.yaml |    Has the YAML for the GitHub Actions             
+
 
 
 <hr/>
