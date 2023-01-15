@@ -154,9 +154,9 @@ Located in  `images/azureml folder`
 
 |  FileName  |  Description |
 |---|---|
-| AzureMLWorkSpace.png |   Azure ML Workspace                   |       
-| ComputeCluster.png|   Compute Cluster for Azure ML        |        
-|  DataStores-BlobStore.png | Blob Store where the Files are being stored     |    
+| AzureMLWorkSpace.png |   Azure ML Workspace. This is the `First step` in the creation of the Models to create the AzureML workspace.                     |       
+| ComputeCluster.png|   Compute Cluster for Azure ML. This shows the machines used for the compute.           |        
+|  DataStores-BlobStore.png | Blob Store where the Files are being stored. This is the place where the `Questions/Answers/Professionals` are used.        |    
 | DataStores.png |   All Datastores of AzureML             |        
 |  Experiment.png | Experiments of AzureML                   |          
 |  ExperimentFinished.png | Finished State of the Experiment in Azure ML      |      
